@@ -8,12 +8,12 @@ public class CarQueue{
 
 	public CarQueue() {
 		queue = new LinkedList<Integer>();
-		queue.add(rdm.nextInt(5));
-		queue.add(rdm.nextInt(5));
-		queue.add(rdm.nextInt(5));
-		queue.add(rdm.nextInt(5));
-		queue.add(rdm.nextInt(5));
-		queue.add(rdm.nextInt(5));
+		queue.add(rdm.nextInt(4));
+		queue.add(rdm.nextInt(4));
+		queue.add(rdm.nextInt(4));
+		queue.add(rdm.nextInt(4));
+		queue.add(rdm.nextInt(4));
+		queue.add(rdm.nextInt(4));
 	}
 	public void addToQueue() {
 		class addRunnable implements Runnable {
@@ -21,7 +21,7 @@ public class CarQueue{
 			public void run() {
 				try {
 					while(true) {
-						queue.add(rdm.nextInt(5));
+						queue.add(rdm.nextInt(4));
 						Thread.sleep(1);
 					}
 				} catch (InterruptedException e) {

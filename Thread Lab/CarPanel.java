@@ -30,11 +30,31 @@ public class CarPanel extends JComponent
 	            {
 	               for(int i=0;i<10;i++)
 	               {
+	            	   carQueue.addToQueue();
 	            	   direction = carQueue.deleteQueue();
-	            	   x = x+10;
+	            	   
+	            	   
+	            	   switch(direction) {
+	            	   case 0: 
+	            		   if(y - 10 <= 0) y+=10;
+	            		   else y-=10;
+	            		   break;
+	            	   case 1:
+	            		   if(y + 10 >= 400) y-=10;
+	            		   else y+=10;
+	            		   break;
+	            	   case 2:
+	            		   if(x + 10 >= 300) x-=10;
+	            		   else x+=10;
+	            		   break;
+	            	   case 3: 
+	            		   if(x - 10 <= 0) x+=10;
+	            		   else x-=10;
+	            		   break;
+	            	   }
+	            	   
 	            	   repaint();
 	            	   Thread.sleep(delay*1000);
-	            	   
 	               }
 	            }
 	            catch (InterruptedException exception)
